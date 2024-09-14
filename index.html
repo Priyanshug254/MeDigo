@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital-GPO Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <header class="flex items-center justify-between px-6 py-4 bg-white shadow-md">
+        <div class="flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-blue-600">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <path d="M3 12h18"></path>
+                <path d="M12 3v18"></path>
+            </svg>
+            <span class="text-xl font-bold">Hospital-GPO Connect</span>
+        </div>
+        <nav>
+            <button class="px-4 py-2 border rounded-md hover:bg-gray-100">Login / Signup</button>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section class="py-12 px-6 text-center">
+            <h1 class="text-4xl font-bold mb-4">Connect Hospitals and GPOs</h1>
+            <p class="text-xl text-gray-600 mb-8">Reduce medicine costs and improve healthcare efficiency</p>
+            <div class="max-w-md mx-auto">
+                <div class="mb-4">
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-md mr-2" onclick="showTab('login')">Login</button>
+                    <button class="px-4 py-2 bg-gray-200 rounded-md" onclick="showTab('signup')">Signup</button>
+                </div>
+                <div id="login" class="tab-content active bg-white shadow-md rounded-md p-6">
+                    <h2 class="text-2xl font-bold mb-4">Login</h2>
+                    <form>
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                            <input type="password" id="password" name="password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Login</button>
+                    </form>
+                </div>
+                <div id="signup" class="tab-content bg-white shadow-md rounded-md p-6">
+                    <h2 class="text-2xl font-bold mb-4">Sign Up</h2>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <input type="text" id="name" name="name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="signup-email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="signup-email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="signup-password" class="block text-sm font-medium text-gray-700">Password</label>
+                            <input type="password" id="signup-password" name="password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="org-type" class="block text-sm font-medium text-gray-700">Organization Type</label>
+                            <select id="org-type" name="org-type" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">Select type</option>
+                                <option value="hospital">Hospital</option>
+                                <option value="gpo">GPO</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 px-6">
+            <h2 class="text-3xl font-bold mb-8 text-center">Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white shadow-md rounded-md p-6">
+                    <h3 class="text-xl font-bold mb-4">Place an Order</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mb-4">
+                        <path d="M19 10c0 3.976-7 11-7 11s-7-7.024-7-11 3.134-7 7-7 7 3.024 7 7z"></path>
+                    </svg>
+                    <p class="mb-4">Easily place orders for medicines at reduced costs through our GPO network.</p>
+                    <button class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Order Now</button>
+                </div>
+                <div class="bg-white shadow-md rounded-md p-6">
+                    <h3 class="text-xl font-bold mb-4">Check Authenticity</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 mb-4">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <p class="mb-4">Verify the authenticity of medicines to ensure patient safety and quality care.</p>
+                    <button class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Verify Medicine</button>
+                </div>
+                <div class="bg-white shadow-md rounded-md p-6">
+                    <h3 class="text-xl font-bold mb-4">Manage Inventory</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600 mb-4">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="8.5" cy="7" r="4"></circle>
+                        <line x1="20" y1="8" x2="20" y2="14"></line>
+                        <line x1="23" y1="11" x2="17" y2="11"></line>
+                    </svg>
+                    <p class="mb-4">Efficiently manage your medicine inventory and track usage patterns.</p>
+                    <button class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">View Inventory</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 px-6 bg-gray-100">
+            <h2 class="text-3xl font-bold mb-8 text-center">Place an Order</h2>
+            <form class="max-w-md mx-auto space-y-4">
+                <div>
+                    <label for="medicine" class="block text-sm font-medium text-gray-700">Medicine Name</label>
+                    <input type="text" id="medicine" name="medicine" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Enter medicine name">
+                </div>
+                <div>
+                    <label for="quantity" class="block text-sm font-medium text-gray-700">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="1" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Enter quantity">
+                </div>
+                <div>
+                    <label for="delivery-date" class="block text-sm font-medium text-gray-700">Delivery Date</label>
+                    <input type="date" id="delivery-date" name="delivery-date" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Place Order</button>
+            </form>
+        </section>
+
+        <section class="py-12 px-6">
+            <h2 class="text-3xl font-bold mb-8 text-center">Check Medicine Authenticity</h2>
+            <div class="max-w-md mx-auto">
+                <div class="flex space-x-4 mb-4">
+                    <input type="text" placeholder="Enter medicine code" class="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Verify</button>
+                </div>
+                <div class="mt-4 p-4 bg-green-100 text-green-800 rounded-md flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span>This medicine is authentic and safe to use.</span>
+                </div>
+                <div class="mt-4 p-4 bg-red-100 text-red-800 rounded-md flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span>Warning: This medicine code is not recognized. Do not use.</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-lg font-semibold mb-4">About Us</h3>
+                <p>Hospital-GPO Connect is a platform designed to reduce medicine costs and improve healthcare efficiency by connecting hospitals with Group Purchasing Organizations.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline">Home</a></li>
+                    <li><a href="#" class="hover:underline">About</a></li>
+                    <li><a href="#" class="hover:underline">Services</a></li>
+                    <li><a href="#" class="hover:under
+line">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                <p>Email: info@hospital-gpo-connect.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 123 Healthcare Ave, Medical City, MC 12345</p>
+            </div>
+        </div>
+        <div class="mt-8 text-center">
+            <p>&copy; 2023 Hospital-GPO Connect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+        }
+    </script>
+</body>
+</html>
